@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="imgbox">
+        <img src="transparent.png" width="100%" >
+
+        <div class="wrap">
+            <img src="original.jpg" id="orginalImg">
+        </div>
+        <span id="line">
+            <img src="arrow.png" class="arrow">
+        </span>
+        </div>
+
+    </div>
+
+    <script>
+        var imgbox = document.querySelector(".imgbox");
+        var wrap = document.querySelector(".wrap");
+        var orginalImg = document.getElementById("orginalImg");
+        var line = document.getElementById("line");
+
+        orginalImg.style.width =imgbox.getBoundingClientRect().width + "px";
+
+        var leftspace = imgbox.getBoundingClientRect().left;
+    
+        imgbox.onmousemove = function(e){ e.pageX; 
+            var boxwidth = (e.pageX - leftspace) + "px";
+            wrap.style.width = boxwidth;
+            line.style.left = boxwidth;
+        }
+
+        
+    
+
+        
+    </script>
+</body>
+</html>
+
+   
